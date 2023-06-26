@@ -1,31 +1,28 @@
 <?php
-    //Variables
+    //CONTANTES
+    /*Una constante es un identificador (nombre) para un valor simple. Como el nombre sugiere, 
+    este valor no puede variar durante la ejecución del script */
 
-    //Las variables en PHP se definen usando el símbolo $ seguido del nombre de la variable.
+    // Declaracion de una constante:
+    /* 
+        1. Utilizamos la funcion define()
+        2. Se declara el nombre de la variables que por convención, los identificadores de 
+        constantes siempre se declaran en mayúsculas
+        3. Seguido de una coma
+        4. Por ultimo se declara el valor de la constante.
+    */
+    define("FINANZA", "mejorar");
 
-    /*Para declarar un nombre de variable válido, éste tiene que empezar con una letra 
-    (o si no empieza con una letra, tendrá que hacerlo con un carácter de subrayado), 
-    seguido de cualquier número de letras, números y caracteres de subrayado, sin espacios */
+    // Nombres de constantes correctos
+    define("FOO", "something");
+    define("FOO2", "something else");
+    define("FOO_BAR", "something more");
 
-    $4variable;   //Nombre de variable inválido.
-    $_4variable;  //Nombre de variable válido.
-    $variable4;   //Nombre de variable válido.
-    $otra;   //Nombre de variable válido.
-    $1_otra;   //Nombre de variable inválido.
-    $variable_de_nombre_muy_largo;   //Nombre de variable válido.
-    $ABC;   //Nombre de variable válido.
-    $ A B C;  //Nombre de variable inválido.
-    $A_y_B_x_C  //Nombre de variable válido.
-    
-    //Asignación de valores con el simbolo =
+    // Nombres de constantes incorrectos
+    define("2FOO",    "something");
 
-    //Declaracion de una variable numerica
-    $edad = 24;
-
-    //Declaracion de una variable de texto
-    $nombre = "Omaira";
-
-    //Declaracion de una variable  booleana
-    $es_valido = true;
-
+    // Esto es válido, pero debe evitarse:
+    // PHP podría cualquier día proporcionar una constante mágica 
+    // que rompiera el script
+    define("__FOO__", "something"); 
 ?> 
