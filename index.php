@@ -1,44 +1,27 @@
 <?php
-    //OPERADORES DE COMPARACION
-    /*  $a and $b	And (y)	true si tanto $a como $b son true.
-        $a or $b	Or (o inclusivo)	true si cualquiera de $a o $b es true.
-        $a xor $b	Xor (o exclusivo)	true si $a o $b es true, pero no ambos.
-        ! $a	Not (no)	true si $a no es true.
-        $a && $b	And (y)	true si tanto $a como $b son true.
-        $a || $b	Or (o inclusivo)	true si cualquiera de $a o $b es true. 
+    //OPERADORES DE INCREMENTO Y DECREMENTO
+    /*  ++$a	Pre-incremento	Incrementa $a en uno, y luego retorna $a.
+        $a++	Post-incremento	Retorna $a, y luego incrementa $a en uno.
+        --$a	Pre-decremento	Decrementa $a en uno, luego retorna $a.
+        $a--	Post-decremento	Retorna $a, luego decrementa $a en uno. 
     */
+    echo "<h3>Postincremento</h3>";
+    $a = 5;
+    echo "Debe ser 5: " . $a++ . "<br />\n";
+    echo "Debe ser 6: " . $a . "<br />\n";
 
-    // --------------------
-    // foo() nunca será llamado ya que los operadores están en cortocircuito
+    echo "<h3>Preincremento</h3>";
+    $a = 5;
+    echo "Debe ser 6: " . ++$a . "<br />\n";
+    echo "Debe ser 6: " . $a . "<br />\n";
 
-    $a = (false && foo());
-    $b = (true  || foo());
-    $c = (false and foo());
-    $d = (true  or  foo());
+    echo "<h3>Postdecremento</h3>";
+    $a = 5;
+    echo "Debe ser 5: " . $a-- . "<br />\n";
+    echo "Debe ser 4: " . $a . "<br />\n";
 
-    // --------------------
-    // "||" tiene una precedencia mayor que "or"
-
-    // El resultado de la expresión (false || true) es asignado a $e
-    // Actúa como: ($e = (false || true))
-    $e = false || true;
-
-    // La constante false es asignada a $f y entonces true es ignorado
-    // Actúa como: (($f = false) or true)
-    $f = false or true;
-
-    var_dump($e, $f);
-
-    // --------------------
-    // "&&" tiene una precedencia mayor que "and"
-
-    // El resultado de la expresión (true && false) es asignado a $g
-    // Actúa como: ($g = (true && false))
-    $g = true && false;
-
-    // La constante true es asignada a $h y entonces false es ignorado
-    // Actúa como: (($h = true) and false)
-    $h = true and false;
-
-    var_dump($g, $h);
+    echo "<h3>Predecremento</h3>";
+    $a = 5;
+    echo "Debe ser 4: " . --$a . "<br />\n";
+    echo "Debe ser 4: " . $a . "<br />\n";
 ?> 
