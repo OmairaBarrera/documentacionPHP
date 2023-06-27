@@ -1,99 +1,44 @@
 <?php
     //OPERADORES DE COMPARACION
-    //permiten comparar dos valores
+    /*  $a and $b	And (y)	true si tanto $a como $b son true.
+        $a or $b	Or (o inclusivo)	true si cualquiera de $a o $b es true.
+        $a xor $b	Xor (o exclusivo)	true si $a o $b es true, pero no ambos.
+        ! $a	Not (no)	true si $a no es true.
+        $a && $b	And (y)	true si tanto $a como $b son true.
+        $a || $b	Or (o inclusivo)	true si cualquiera de $a o $b es true. 
+    */
 
-    //IGUAL: $z == $y, Igual true si $z es igual a $y después de la manipulación de tipos.
-    $z = 10;
-	$y = 10;
+    // --------------------
+    // foo() nunca será llamado ya que los operadores están en cortocircuito
 
-	if ($z == $y) {
-		echo "Los valores son iguales.";
-	}
+    $a = (false && foo());
+    $b = (true  || foo());
+    $c = (false and foo());
+    $d = (true  or  foo());
 
-    //DIFERENTE: $x != $w, Diferente true si $x no es igual a $w después de la manipulación de tipos.
-    //Tambien; $a <> $b	Diferente true si $a no es igual a $b después de la manipulación de tipos.
-    $x = 10;
-	$w = 20;
+    // --------------------
+    // "||" tiene una precedencia mayor que "or"
 
-	if ($x != $w) {
-		echo "Los valores son diferentes.";
-    }
+    // El resultado de la expresión (false || true) es asignado a $e
+    // Actúa como: ($e = (false || true))
+    $e = false || true;
 
-    //IDENTICO: $v === $u	Idéntico	true si $v es igual a $u, y son del mismo tipo.
-    $v = 10;
-	$u = 10;
+    // La constante false es asignada a $f y entonces true es ignorado
+    // Actúa como: (($f = false) or true)
+    $f = false or true;
 
-	if ($v === $u) {
-		echo "Los valores son idénticos";
-	}
+    var_dump($e, $f);
 
-    //NO IDENTICO: $s !== $t	No idéntico	true si $s no es igual a $t, o si no son del mismo tipo.
-    $s = 10;
-	$t = "10";
+    // --------------------
+    // "&&" tiene una precedencia mayor que "and"
 
-	if ($s !== $t) {
-		echo "Los valores no son idénticos.";
-	}
+    // El resultado de la expresión (true && false) es asignado a $g
+    // Actúa como: ($g = (true && false))
+    $g = true && false;
 
-    //MAYOR QUE: $a > $b, Mayor que	true si $a es estrictamente mayor que $b
-    $a = 15;
-	$b = 2;
+    // La constante true es asignada a $h y entonces false es ignorado
+    // Actúa como: (($h = true) and false)
+    $h = true and false;
 
-	if ($a > $b) {
-		echo "El valor 1 es mayor que el valor 2.";
-	}
-
-    //MENOR QUE: $c < $d, Menor que	true si $c es estrictamente menor que $d.
-    $c = 17;
-	$d = 50;
-
-	if ($c < $d) {
-		echo "El valor 1 es menor que el valor 2.";
-	}
-
-    //MAYOR O IGUAL QUE: $e >= $f, Mayor o igual que true si $e es mayor o igual que $f.
-    $e = 10;
-	$f = 10;
-
-	if ($e >= $f) {
-		echo "El valor 1 es mayor o igual que el valor 2.";
-	}
-
-    //MENOR O IGUAL QUE: $g <= $h, Menor o igual que true si $g es menor o igual que $h.
-    $g = 10;
-	$h = 10;
-
-	if ($g <= $h) {
-		echo "El valor 1 es menor o igual que el valor 2.";
-	}
-
-    //NAVE ESPACIAL: $a <=> $b	Nave espacial	Un integer menor que, igual a, o mayor que cero cuando $a es 
-    //respectivamente menor que, igual a, o mayor que $b. Disponible a partir de PHP 7.
-    // Números enteros
-    echo 1 <=> 1; // 0
-    echo 1 <=> 2; // -1
-    echo 2 <=> 1; // 1
-
-    // Numeros decimales
-    echo 1.5 <=> 1.5; // 0
-    echo 1.5 <=> 2.5; // -1
-    echo 2.5 <=> 1.5; // 1
-
-    // Cadenas de caracteres
-    echo "a" <=> "a"; // 0
-    echo "a" <=> "b"; // -1
-    echo "b" <=> "a"; // 1
-
-    // FUSION DE NULL: $a ?? $b ?? $c	Fusión de null	El primer operando de izquierda a derecha que exista y no sea 
-    //null. null si no hay valores definidos y no son null. Disponible a partir de PHP 7.
-    // Obntener el valor de $_GET['usuario'] y devolver 'nadie'
-    // si no existe.
-    $nombre_usuario = $_GET['usuario'] ?? 'nadie';
-    // Esto equivale a:
-    $nombre_usuario = isset($_GET['usuario']) ? $_GET['usuario'] : 'nadie';
-
-    // La fusión se puede encadenar: esto devolverá el primer
-    // valor definido de $_GET['usuario'], $_POST['usuario'],
-    // y 'nadie'.
-    $nombre_usuario = $_GET['usuario'] ?? $_POST['usuario'] ?? 'nadie';
+    var_dump($g, $h);
 ?> 
