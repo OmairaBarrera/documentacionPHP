@@ -1,72 +1,99 @@
 <?php
-    //OPERADORES BIT A BIT
-    /* Los operadores bit a bit permiten la evaluación y la manipulación de bits específicos dentro 
-    de un integer. */
+    //OPERADORES DE COMPARACION
+    //permiten comparar dos valores
 
-    /*  $a & $b	- And (y)	Los bits que están activos en ambos $a y $b son activados.
-        $a | $b	- Or (o inclusivo)	Los bits que están activos ya sea en $a o en $b son activados.
-        $a ^ $b	- Xor (o exclusivo)	Los bits que están activos en $a o en $b, pero no en ambos, 
-        son activados.
-        ~ $a - Not (no)	Los bits que están activos en $a son desactivados, y viceversa.
-        $a << $b - Shift left(desplazamiento a izquierda). Desplaza los bits de $a, $b pasos a la 
-        izquierda (cada paso quiere decir "multiplicar por dos").
-        $a >> $b - Shift right (desplazamiento a derecha). Desplaza los bits de $a, $b pasos a la 
-        derecha (cada paso quiere decir "dividir por dos").
-    */
+    //IGUAL: $z == $y, Igual true si $z es igual a $y después de la manipulación de tipos.
+    $z = 10;
+	$y = 10;
 
-    //OPERADOR BIT A BIT AND
-    /*El operador AND toma el valor de los bits que $x e $y tienen en común: El único bit que 
-    comparten estas variables está en segunda posición, y su valor es 2. */
-    $a = 10;
-    $b = 34;
-    echo $a & $b; // El valor es: 2
-    echo "\n";
+	if ($z == $y) {
+		echo "Los valores son iguales.";
+	}
 
-    //OPERADOR BIT A BIT OR
-    /*El valor que tomará esta vez será la sumar de los bits de cualquiera de los dos, coincidan 
-    o no */
-    $c = 7;
-    $d = 14;
-    echo $c | $d; // El valor será: 15
-    echo "\n";
+    //DIFERENTE: $x != $w, Diferente true si $x no es igual a $w después de la manipulación de tipos.
+    //Tambien; $a <> $b	Diferente true si $a no es igual a $b después de la manipulación de tipos.
+    $x = 10;
+	$w = 20;
 
-    //OPERADOR BIT A BIT XOR
-    /*realiza una comparación bit a bit entre dos expresiones numéricas y establece el correspondiente
-    bit en el resultado. Cuando sólo una expresión es true el resultado es true. */
-    $e = 14;
-    $f = 8;
-    echo $e ^ $f; // El valor será: 6
-    echo "\n";
+	if ($x != $w) {
+		echo "Los valores son diferentes.";
+    }
 
-    //OPERADOR BIT A BIT NOT
-    /*El operador NOT (~) devuelve true cuando el bit de una expresión no está establecido en otra 
-    expresión. */
-    //NOT usando AND después
-    $g = 11;
-    $h = 14;
-    echo $h & ~ $g; // El valor será: 4
-    //NOT usando AND antes
-    $i = 14;
-    $j = 11;
-    echo ~ $i & $j; // El valor será : 1
+    //IDENTICO: $v === $u	Idéntico	true si $v es igual a $u, y son del mismo tipo.
+    $v = 10;
+	$u = 10;
 
-    //OPERADORES BIT A BIT DE DESPLAZAMIENTO
-    /*Si a y b son dos números, el desplazamiento de bits (bit shifting) desplaza a bits un número b 
-    de posiciones. Cada posición es multiplicar por dos si es desplazamiento a la izquierda (bit 
-    shift left). Si es desplazamiento a la derecha es (bit shift right), cada posición se refiere a 
-    dividir por dos. */
+	if ($v === $u) {
+		echo "Los valores son idénticos";
+	}
 
-    //DESPLAZAMIENTO A LA IZQUIERDA <<
-    /*En este ejemplo, un valor de $x de 8 se tiene que mover un número $y de posiciones, en este 
-    caso dos, lo que resulta en multiplicar 2 veces por 2, resultando 16. */
-    $x = 4;
-    $y = 2;
-    echo $x << $y; // El valor será: 16
+    //NO IDENTICO: $s !== $t	No idéntico	true si $s no es igual a $t, o si no son del mismo tipo.
+    $s = 10;
+	$t = "10";
 
-    //DESPLAZAMIENTO A LA DERECHA >>
-    /*El valor de $x es 16, desplazamos a la derecha un número $y de veces, dividiendo dos veces para
-    2, resultando así un valor de 4. */
-    $x = 16;
-    $y = 2;
-    echo $x >> $y; // El valor será: 4
+	if ($s !== $t) {
+		echo "Los valores no son idénticos.";
+	}
+
+    //MAYOR QUE: $a > $b, Mayor que	true si $a es estrictamente mayor que $b
+    $a = 15;
+	$b = 2;
+
+	if ($a > $b) {
+		echo "El valor 1 es mayor que el valor 2.";
+	}
+
+    //MENOR QUE: $c < $d, Menor que	true si $c es estrictamente menor que $d.
+    $c = 17;
+	$d = 50;
+
+	if ($c < $d) {
+		echo "El valor 1 es menor que el valor 2.";
+	}
+
+    //MAYOR O IGUAL QUE: $e >= $f, Mayor o igual que true si $e es mayor o igual que $f.
+    $e = 10;
+	$f = 10;
+
+	if ($e >= $f) {
+		echo "El valor 1 es mayor o igual que el valor 2.";
+	}
+
+    //MENOR O IGUAL QUE: $g <= $h, Menor o igual que true si $g es menor o igual que $h.
+    $g = 10;
+	$h = 10;
+
+	if ($g <= $h) {
+		echo "El valor 1 es menor o igual que el valor 2.";
+	}
+
+    //NAVE ESPACIAL: $a <=> $b	Nave espacial	Un integer menor que, igual a, o mayor que cero cuando $a es 
+    //respectivamente menor que, igual a, o mayor que $b. Disponible a partir de PHP 7.
+    // Números enteros
+    echo 1 <=> 1; // 0
+    echo 1 <=> 2; // -1
+    echo 2 <=> 1; // 1
+
+    // Numeros decimales
+    echo 1.5 <=> 1.5; // 0
+    echo 1.5 <=> 2.5; // -1
+    echo 2.5 <=> 1.5; // 1
+
+    // Cadenas de caracteres
+    echo "a" <=> "a"; // 0
+    echo "a" <=> "b"; // -1
+    echo "b" <=> "a"; // 1
+
+    // FUSION DE NULL: $a ?? $b ?? $c	Fusión de null	El primer operando de izquierda a derecha que exista y no sea 
+    //null. null si no hay valores definidos y no son null. Disponible a partir de PHP 7.
+    // Obntener el valor de $_GET['usuario'] y devolver 'nadie'
+    // si no existe.
+    $nombre_usuario = $_GET['usuario'] ?? 'nadie';
+    // Esto equivale a:
+    $nombre_usuario = isset($_GET['usuario']) ? $_GET['usuario'] : 'nadie';
+
+    // La fusión se puede encadenar: esto devolverá el primer
+    // valor definido de $_GET['usuario'], $_POST['usuario'],
+    // y 'nadie'.
+    $nombre_usuario = $_GET['usuario'] ?? $_POST['usuario'] ?? 'nadie';
 ?> 
