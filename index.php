@@ -1,27 +1,36 @@
 <?php
-    //OPERADORES DE INCREMENTO Y DECREMENTO
-    /*  ++$a	Pre-incremento	Incrementa $a en uno, y luego retorna $a.
-        $a++	Post-incremento	Retorna $a, y luego incrementa $a en uno.
-        --$a	Pre-decremento	Decrementa $a en uno, luego retorna $a.
-        $a--	Post-decremento	Retorna $a, luego decrementa $a en uno. 
-    */
-    echo "<h3>Postincremento</h3>";
-    $a = 5;
-    echo "Debe ser 5: " . $a++ . "<br />\n";
-    echo "Debe ser 6: " . $a . "<br />\n";
+    //ARREGLOS
+    /*son estructuras de datos que permiten almacenar múltiples valores en una sola variable*/
 
-    echo "<h3>Preincremento</h3>";
-    $a = 5;
-    echo "Debe ser 6: " . ++$a . "<br />\n";
-    echo "Debe ser 6: " . $a . "<br />\n";
+    //Formas para declarar arreglos
+    //ambas formas de representar un arreglo son correctas
 
-    echo "<h3>Postdecremento</h3>";
-    $a = 5;
-    echo "Debe ser 5: " . $a-- . "<br />\n";
-    echo "Debe ser 4: " . $a . "<br />\n";
+    //Primera forma
+    $edades = [20,18,17];
 
-    echo "<h3>Predecremento</h3>";
-    $a = 5;
-    echo "Debe ser 4: " . --$a . "<br />\n";
-    echo "Debe ser 4: " . $a . "<br />\n";
+    //Segunda forma
+    $numeros = array(1,2,3,4);
+
+    //Util para ver contenidos de un array
+    echo "<pre>";
+    var_dump($edades);
+    echo "</pre>";
+
+    echo "<pre>";
+    var_dump($numeros);
+    echo "</pre>";
+
+    //Para acceder a un elemento del array
+    echo $edades[1];
+    echo "\n";
+    echo $numeros[2];
+    echo "\n";
+
+    //Anadir un elemento en el indice 3 de un arreglo
+    $edades[2] = '34';
+    $numeros[2] = '20';
+
+    echo 'Una de las edades es ' . $edades[1];
+    echo "\n";
+    echo 'Un numero es ' . $numeros[3];
 ?> 
