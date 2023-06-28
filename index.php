@@ -1,40 +1,25 @@
 <?php
-    //ESTRUCTURAS DE CONDICIONALES
-    /*Las estructuras condicionales son una estructura de control de flujo en programación que 
-    permite que el programa tome decisiones basadas en si se cumple o no una condición */
+    //ESTRUCTURAS REPETITIVAS
+    /*Las estructuras repetitivas, también conocidas como estructuras de control de bucle, son 
+    herramientas fundamentales en la programación que permiten repetir la ejecución de un bloque 
+    de código varias veces 
+    */
 
-    //SWITCH
-    /*permite ejecutar diferentes bloques de código dependiendo del valor de una variable.*/
+    //BUCLE WHILE
+    /*permite repetir la ejecución de un bloque de código mientras se cumpla una condición.*/
 
     //SINTAXIS
     /*
-        switch (expresion) {
-            case valor1:
-                bloque de código si la expresión es igual a valor1
-                break;
-            case valor2:
-                bloque de código si la expresión es igual a valor2
-                break;
-            default:
-                bloque de código si la expresión no coincide con ninguno de los valores anteriores
-                break;
-            }
+        while(condicion){
+            codigo a ejecutar mientras la condicion sea verdadera
+        }
     */
 
-    $tecnologia = "HTML";
-
-    switch ($tecnologia) {
-        case 'PHP':
-            echo "PHP, excelente lennguaje!";
-            break;
-        case 'JavaScritp':
-            echo "Genial, el lenguaje de la web!";
-            break;
-        case 'HTML':
-            echo "Emmmm........";
-            break;
-        default:
-            echo "Algun lenguaje que no se cual es";
-            break;
+    /* Crea un programa en el que imprima los numero de 1 al 10 */
+    $cont = 1;
+    while($cont <= 10){
+        echo $cont;
+        echo "\n";
+        $cont++;
     }
 ?> 
