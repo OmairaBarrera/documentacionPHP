@@ -5,21 +5,19 @@
     de código varias veces 
     */
 
-    //BUCLE WHILE
+    //BUCLE DO WHILE
     /*permite repetir la ejecución de un bloque de código mientras se cumpla una condición.*/
 
     //SINTAXIS
     /*
-        while(condicion){
-            codigo a ejecutar mientras la condicion sea verdadera
-        }
+        do{
+            codigo a ejecutar almeno una vez
+        }while(condicion)
     */
 
-    /* Crea un programa en el que imprima los numero de 1 al 10 */
-    $cont = 1;
-    while($cont <= 10){
-        echo $cont;
+    $users = ["Ana","Juan","Andres","Diego"];
+    do {
+        $user = readline("Ingresa tu usuario: ");
         echo "\n";
-        $cont++;
-    }
+    } while(in_array($user,$users));
 ?> 
