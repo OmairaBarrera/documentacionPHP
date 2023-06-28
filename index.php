@@ -3,38 +3,38 @@
     /*Las estructuras condicionales son una estructura de control de flujo en programación que 
     permite que el programa tome decisiones basadas en si se cumple o no una condición */
 
-    //IF
-    /*Se utiliza para definir una acción que se ejecutará si se cumple la condición especificada y 
-    otra acción que se ejecutará si no se cumple. */
+    //SWITCH
+    /*permite ejecutar diferentes bloques de código dependiendo del valor de una variable.*/
 
     //SINTAXIS
     /*
-        if(condición){
-            Instrucciones
-        }
+        switch (expresion) {
+            case valor1:
+                bloque de código si la expresión es igual a valor1
+                break;
+            case valor2:
+                bloque de código si la expresión es igual a valor2
+                break;
+            default:
+                bloque de código si la expresión no coincide con ninguno de los valores anteriores
+                break;
+            }
     */
 
-    if(10 > 3){
-        //Instrucciones
-        echo "El numero es mayor";
-    };
+    $tecnologia = "HTML";
 
-    if(10 > 3){
-        //Instrucciones
-        echo "El numero es mayor";
-    } else {
-        //Instrucciones
-        echo "El numero es menor";
-    };
-
-    if(10 > 3){
-        //Instrucciones
-        echo "El numero es mayor";
-    } elseif (10 > 20){
-        //Instrucciones
-        echo "El numero es mayor";
-    } else {
-        //Instrucciones
-        echo "El numero es menor";
-    };
+    switch ($tecnologia) {
+        case 'PHP':
+            echo "PHP, excelente lennguaje!";
+            break;
+        case 'JavaScritp':
+            echo "Genial, el lenguaje de la web!";
+            break;
+        case 'HTML':
+            echo "Emmmm........";
+            break;
+        default:
+            echo "Algun lenguaje que no se cual es";
+            break;
+    }
 ?> 
