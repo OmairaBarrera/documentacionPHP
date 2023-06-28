@@ -5,19 +5,24 @@
     de código varias veces 
     */
 
-    //BUCLE DO WHILE
-    /*permite repetir la ejecución de un bloque de código mientras se cumpla una condición.*/
+    //BUCLE FOR
+    /*permite repetir la ejecución de un bloque de código un número fijo de veces, controlando el 
+    número de iteraciones mediante un contador.*/
 
     //SINTAXIS
     /*
-        do{
-            codigo a ejecutar almeno una vez
-        }while(condicion)
+        for(inicializacion; condicion; incremento/decremento){
+            codigo a ejecutar en cada iteracion
+        }
     */
 
-    $users = ["Ana","Juan","Andres","Diego"];
-    do {
-        $user = readline("Ingresa tu usuario: ");
-        echo "\n";
-    } while(in_array($user,$users));
+    $numeroTienda = readline('Ingresa el numero de tienda = ');
+    $anterior = 0;
+    $actual = 1;
+    for($i=2;$i<=$numeroTienda;$i++){
+        $caminos = $anterior + $actual;
+        $anterior = $actual;
+        $actual = $caminos; 
+    }
+    echo "Los caminos a recorer $numeroTienda son = $caminos";
 ?> 
