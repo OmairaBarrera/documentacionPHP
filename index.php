@@ -9,13 +9,10 @@
 </head>
 <body>
     <header>
-        <?php include_once('scripts/main.php')?>
+        <?php require('scripts/main.php')?>
     </header>
     <main>
-        <?php include('scripts/include.php')?>
-        <?php include_once('scripts/includeOnce.php')?>
-        <?php include('scripts/include.php')?>
-        <?php include_once('scripts/includeOnce.php')?>
+        <?php require('scripts/require.php')?>
     </main>
 </body>
 </html>
